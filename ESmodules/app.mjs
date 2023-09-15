@@ -1,0 +1,14 @@
+// import log, { characters, greet as hello } from './characters.mjs'
+
+async function main() {
+  try {
+    const { characters, greet: hello } = await import('./characters.mjs')
+    for (const c of characters) {
+      hello(c)
+    }
+  } catch (error) {
+    console.log('Error')
+  }
+}
+
+main()
